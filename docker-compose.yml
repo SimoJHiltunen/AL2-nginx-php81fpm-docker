@@ -1,0 +1,12 @@
+version: "3.2"
+services:
+  nginx-php:
+    build: ./
+    container_name: ${image}
+    hostname: ${image}
+    volumes:
+      - "./service:/var/www"
+    environment:
+      VIRTUAL_HOST: ${VHOST}
+    ports:
+      - 8080:80
